@@ -1,0 +1,61 @@
+﻿@model List<news>
+@{           
+    ViewBag.Title = "allNews";
+}
+    <div class="modal" id="d2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                   
+                </div>
+                <div class="modal-body" id="d1">
+
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="close" data-dismiss="modal" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Top Image -->
+@foreach (var item in Model)
+{
+
+    <section class="left-image">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/Attach/NewsImages/@item.photo" alt="">
+                </div>
+                <div class="col-md-6">
+                    <div class="right-content">
+                        <div class="row" style="text-align:center">
+                            <h3 class="aa">@item.category.categoryName</h3><br />
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6"><h4>@item.title</h4></div>
+                            <div class="col-sm-6 col-md-6 col-lg-6"><h4>@item.datetime</h4></div>
+                        </div>
+                        
+                        <p>@item.brief</p>
+                        <div class="primary-button">
+                              @*@Html.ActionLink("Read More", "readMore", "news", new { id = item.newsId }, new { @class = "primary-button" })*@
+                              @Ajax.ActionLink("Read more", "modaldisplay", new { id = item.newsId },
+                              new AjaxOptions
+                              {
+                                  UpdateTargetId = "d1",
+                                  InsertionMode = InsertionMode.Replace,
+                                  OnComplete = "show"
+                              })
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+}
+

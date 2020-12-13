@@ -1,0 +1,41 @@
+﻿@model List<news>
+@{
+    ViewBag.Title = "userNews";
+}
+<div style="margin-top:-60px;">
+
+</div>
+@Html.ActionLink("What's up !! Drag The latest news ", "addNews","news",null,new { @class="btn btn-info"})
+ 
+@foreach (var item in Model)
+{
+
+    <section class="left-image">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/Attach/NewsImages/@item.photo" alt="">
+                </div>
+                <div class="col-md-6">
+                    <div class="right-content">
+                        <div class="row" style="text-align:center">
+                            <h3 class="aa">@item.category.categoryName</h3><br />
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6"><h4>@item.title</h4></div>
+                            <div class="col-sm-6 col-md-6 col-lg-6"><h4>@item.datetime</h4></div>
+                        </div>
+
+                        <p>@item.brief</p>
+                        <div class="primary-button">
+                            @Html.ActionLink("Read More", "readMore", "news", new { id = item.newsId }, new { @class = "primary-button" })
+                            @Html.ActionLink("Edit", "edit", "news", new { id = item.newsId }, new { @class = "primary-button" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+}

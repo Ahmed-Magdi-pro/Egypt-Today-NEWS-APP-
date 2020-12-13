@@ -1,0 +1,44 @@
+﻿@model news
+@{
+    ViewBag.Title = "edit";
+}
+
+
+<form method="post" enctype="multipart/form-data">
+    <table class="table table-active">
+        @Html.HiddenFor(n=>n.newsId)
+        <tr>
+            <td>@Html.LabelFor(n => n.title)</td>
+            <td>@Html.TextBoxFor(n => n.title)</td>
+            <td>@Html.ValidationMessageFor(n => n.title)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.brief)</td>
+            <td>@Html.TextAreaFor(n => n.brief)</td>
+            <td>@Html.ValidationMessageFor(n => n.brief)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.description)</td>
+            <td>@Html.TextAreaFor(n => n.description)</td>
+            <td>@Html.ValidationMessageFor(n => n.description)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.categoryId)</td>
+            <td>@Html.DropDownListFor(n => n.categoryId, (SelectList)ViewBag.categoryList)</td>
+            <td>@Html.ValidationMessageFor(n => n.categoryId)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.photo)</td>
+            <td><input type="file" name="newsImg" /></td>
+            <td>@Html.ValidationMessageFor(n => n.photo)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary "> Update News </button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+

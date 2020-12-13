@@ -1,0 +1,127 @@
+﻿@model NewWepApp.Models.user
+@{
+    ViewBag.Title = "Register";
+
+}
+
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        <p class="divider-text">
+            <span class="bg-light">OR</span>
+        </p>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group input-group">
+                <div class="row">
+                    <div class="col-sm-2 input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <div class="col-sm-10">
+                        
+                        @Html.TextBoxFor(n => n.userName, new { @class = "form-control", placeholder = "Full name" })
+                        @Html.ValidationMessageFor(n => n.userName, null, new { @class="invailclass"})
+                    </div>
+
+                </div>
+               
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                @Html.TextBoxFor(n => n.email, new { @class = "form-control", placeholder = "Email address" })
+                @Html.ValidationMessageFor(n=>n.email)    
+                </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fas fa-image"></i> </span>
+                </div>
+                <input type="file" name="img" />
+                @ViewBag.errMess
+            </div> <!-- form-group// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                @Html.PasswordFor(n => n.password, new { @class = "form-control", placeholder = "Create password" })
+                @Html.ValidationMessageFor(n=>n.password)
+                </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                @Html.PasswordFor(n => n.confirm_password, new { @class = "form-control", placeholder = "Repeat password" })
+                @Html.ValidationMessageFor(n=>n.confirm_password)
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+            </div> <!-- form-group// -->
+            Have an account?
+            @Html.ActionLink("Log In", "login", "LoginOperation", null, new { @class = "text-center" })
+
+        </form>
+    </article>
+</div> <!-- card.// -->
+
+
+
+
+@*<section class=" container">
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <p class="text-center">Get started with your free account</p>
+                <p class="divider-text">
+                    <span class="bg-light">OR</span>
+                </p>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        @Html.TextBoxFor(n => n.userName, new { @class = "form-control", placeholder = "Full name" })
+
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        @Html.TextBoxFor(n => n.email, new { @class = "form-control", placeholder = "Email address" })
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-image"></i> </span>
+                        </div>
+                        <input type="file" name="img" />
+                    </div> <!-- form-group// -->
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        @Html.PasswordFor(n => n.password, new { @class = "form-control", placeholder = "Create password" })
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        @Html.PasswordFor(n => n.confirm_password, new { @class = "form-control", placeholder = "Repeat password" })
+
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                    </div> <!-- form-group// -->
+                    Have an account?
+                    @Html.ActionLink("Log In", "login", "LoginOperation", null, new { @class = "text-center" })
+
+                </form>
+            </article>
+        </div>
+
+    </section>*@
+
+
+
+<!--container end.//-->

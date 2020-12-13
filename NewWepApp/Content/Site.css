@@ -1,0 +1,40 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+    .divider-text span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .divider-text:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }

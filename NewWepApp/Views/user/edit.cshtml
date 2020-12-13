@@ -1,0 +1,34 @@
+﻿@model user
+@{
+    ViewBag.Title = "edit";
+}
+
+<div class="">
+    <form method="post">
+        @Html.HiddenFor(n => n.userId)
+
+        <table class="table table-active">
+   
+                
+                <tr>
+                    <td>@Html.LabelFor(n => n.userName)</td>
+                    <td>@Html.TextBoxFor(n => n.userName)</td>
+                    <td>@Html.ValidationMessageFor(n=>n.userName)</td>
+                </tr> <tr>
+                    <td>@Html.LabelFor(n => n.email)</td>
+                    <td>@Html.TextBoxFor(n => n.email)</td>
+                    <td>@Html.ValidationMessageFor(n=>n.email)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Update" class="btn btn-info" /></td>
+                    <td></td>
+                </tr>
+           
+            
+        </table>
+
+
+    </form>
+
+</div>

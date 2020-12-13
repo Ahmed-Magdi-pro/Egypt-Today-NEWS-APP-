@@ -1,0 +1,199 @@
+﻿@using NewWepApp.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>@ViewBag.Title - News App</title>
+
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    @* <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">*@
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+
+
+    <link href="/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/content/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/content/assets/css/templatemo-style.css">
+    <link rel="stylesheet" href="/content/assets/css/owl.css">
+
+</head>
+<body>
+
+
+
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <div class="logo">
+                        <a href="/Home/index"><img src="~/Content/assets/images/21601.png"  style="width:110px;height:115px;"/></a>
+                    </div>
+                </header>
+
+
+
+                @RenderBody()
+
+
+                <!-- Services -->
+                <section class="services">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="service-item first-item">
+                                    <div class="icon"></div>
+                                    <h4>Web Design</h4>
+                                    <p>You can download <a rel="nofollow" href="https://github.com/Ahmed-Magdi-pro">Clone</a> From <a rel="nofollow" href="https://github.com/Ahmed-Magdi-pro">Git Hub</a> for this app From Here . Thank you.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item second-item">
+                                    <div class="icon"></div>
+                                    <h4>Bootstrap 4</h4>
+                                    <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item third-item">
+                                    <div class="icon"></div>
+                                    <h4>HTML CSS</h4>
+                                    <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item fourth-item">
+                                    <div class="icon"></div>
+                                    <h4>Download Free</h4>
+                                    <p>We have many free to use CSS web templates on our site for you.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item fivth-item">
+                                    <div class="icon"></div>
+                                    <h4>Get in touch</h4>
+                                    <p>You can get the fastest response from <a rel="nofollow" href="https://www.linkedin.com/in/ahmed-magdi-9b6008200/">Ahmed Magdy</a>On my linkedIn page.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service-item sixth-item">
+                                    <div class="icon"></div>
+                                    <h4>Spread a word</h4>
+                                    <p>Please tell your friends about my website. This is very helpful.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+
+            <div class="inner">
+
+
+
+
+                <!-- Menu -->
+                <nav id="menu">
+                    <ul>
+                        <li><a href="/Home/index">Home</a></li>
+                        @Html.ActionLink("News", "allNews", "news")
+                        @Html.ActionLink("Categories", "categoryDDL", "category")
+
+                        @if (Session["userId"] == null)
+                        {
+                            <li>@Html.ActionLink("Register", "register", "user")</li>
+                            <li>@Html.ActionLink("Login", "login", "LoginOperation")</li>
+                        }
+                        @if (Session["userId"] != null)
+                        {
+                            <li>@Html.ActionLink("Log out", "logout", "LoginOperation")</li>
+                            <li>@Html.ActionLink("View Profile ", "profile", "user")</li>
+                            <li>@Html.ActionLink("My News", "userNews", "news")</li>
+                        }
+                    </ul>
+
+
+                </nav>
+
+                <!-- Featured Posts -->
+                <div class="featured-posts">
+                    <div class="heading">
+                        <h2>Featured Posts</h2>
+                    </div>
+                    <div class="owl-carousel owl-theme">
+                        <a href="#">
+                            <div class="featured-item">
+                                <img src="/content/assets/images/featured_post_01.jpg" alt="featured one">
+                                <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="featured-item">
+                                <img src="/content/assets/images/featured_post_01.jpg" alt="featured two">
+                                <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="featured-item">
+                                <img src="/content/assets/images/featured_post_01.jpg" alt="featured three">
+                                <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">
+                        Copyright &copy; 2020 ITI Trainee
+                        <br>Edit by <a rel="nofollow" href="/Home/index">Ahmed Magdy</a>
+                    </p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="/content/vendor/jquery/jquery.min.js"></script>
+    <script src="/content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/content/assets/js/browser.min.js"></script>
+    <script src="/content/assets/js/breakpoints.min.js"></script>
+    <script src="/content/assets/js/transition.js"></script>
+    <script src="/content/assets/js/owl-carousel.js"></script>
+    <script src="/content/assets/js/custom.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <script>
+        $("#depts").on("change", function () {
+            let id = $("#depts").val();
+            $("#d1").load("/category/categoryNews/" + id);
+        })
+    </script>
+   
+    <script>
+        function show() {
+            $("#d2").modal({ show: true })
+        }
+    </script>
+
+</body>
+</html>

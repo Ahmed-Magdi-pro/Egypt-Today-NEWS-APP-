@@ -1,0 +1,63 @@
+﻿@model NewWepApp.Models.loginData
+
+@{
+    ViewBag.Title = "Login";
+
+}
+<div class="container">
+    <form method="post">
+        <div class="form-group row">
+            @Html.LabelFor(n => n.email, new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10 ">
+                <div class="row">
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(n => n.email, new { @class = "form-control", placeholder = "Email" })
+                    </div>
+                    <div class="col-sm-4 invalidclass">
+                        @Html.ValidationMessageFor(n => n.email)
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+        <div class="form-group row">
+            @Html.LabelFor(n => n.password, new { @class = "col-sm-2 col-form-label" })
+            <div class="col-sm-10 ">
+                <div class="row">
+                    <div class="col-sm-8">
+                        @Html.PasswordFor(n => n.password, new { @class = "form-control", placeholder = "Password" })
+                    </div>
+                    <div class="col-sm-4 invalidclass">
+                        @Html.ValidationMessageFor(n => n.password)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    @Html.CheckBox("remember",new { @class="form-check-input"})
+                    <label class="form-check-label" for="gridCheck1">
+                        remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <input type="submit" value="login" class="btn btn-primary" />
+             
+            </div>
+            <div class="col-sm-4" style="color:red;">
+                @if (@ViewBag.mess != null)
+                {
+                    @ViewBag.mess;
+                }
+            </div>
+        </div>
+    </form>
+</div>

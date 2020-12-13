@@ -1,0 +1,34 @@
+﻿@model NewWepApp.Models.user
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+
+
+
+<section class="right-image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left-content" >
+                    
+                    <h3>my profile</h3>
+                    <h3 style="color:#535ba0;"> @Model.userName</h3>
+                    <div class="primary-button">
+                        <br />
+                        <br />
+                       
+                        
+                        @Html.ActionLink("Edit", "edit", new { id = Model.userId })
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="~/attach/@Model.photo"  />
+
+            </div>
+        </div>
+    </div>
+</section>
